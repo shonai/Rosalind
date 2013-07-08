@@ -1,3 +1,4 @@
+#include <QtCore/QCoreApplication>
 #include <QtCore>
 #include <string>
 #include <iostream>
@@ -5,8 +6,10 @@
 
 using namespace std;
 
-int main(void)
+int main(int argc, char *argv[])
 {
+    QCoreApplication a(argc, argv);
+
     ifstream FileToBeOpen;
     string FileName;
     string StrFromFile;
@@ -15,12 +18,10 @@ int main(void)
         GCounter,
         TCounter;
 
-    //cout<< "Please, input the name of a file, containing DNA";
-    //cin>>FileName;
-    FileToBeOpen.open("file.txt", ifstream::in);//open(FileName.c_str());
+    cout<< "Please, input the name of a file, containing DNA"<<endl;
+    cin>>FileName;
+    FileToBeOpen.open(FileName.c_str(), ifstream::in);
     FileToBeOpen >> StrFromFile;
-    cout<<FileToBeOpen.gcount();
-    FileToBeOpen.close();
 
     ACounter = count(StrFromFile.begin(), StrFromFile.end(), 'A');
     CCounter = count(StrFromFile.begin(), StrFromFile.end(), 'C');
@@ -31,6 +32,7 @@ int main(void)
         <<"CCounter = "<<CCounter<<endl
         <<"GCounter = "<<GCounter<<endl
         <<"TCounter = "<<TCounter<<endl;
+    FileToBeOpen.close();
 
-    return 0;
+    return a.exec();
 }
