@@ -29,8 +29,7 @@ int main(int argc, char *argv[])
     cin  >> aa_aa;
 
     double result = Aa_Aa * 1.5 + AA_AA * 2. + AA_Aa * 2. + AA_aa * 2. + Aa_aa;
-//    cout << result;
-    printf("%f", result);
+    cout << fixed << result;
 
     return a.exec();
 }
