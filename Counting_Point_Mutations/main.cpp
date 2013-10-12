@@ -10,18 +10,23 @@ int main(int argc, char *argv[])
     std::string FirstString;
     std::string SecondString;
     std::ifstream InputFile("C:/games/input.txt");
+
     int HamingDistance = 0;
+
     std::getline(InputFile, FirstString);
     std::getline(InputFile, SecondString);
 
-    for (int i = 0; i != (int)FirstString.length(); i++ )
+    std::string::iterator SecondIter = SecondString.begin();
+    for (std::string::iterator FirstIter = FirstString.begin(); FirstIter != FirstString.end(); ++FirstIter)
     {
-        if(FirstString[i] == SecondString[i])
+        if ( *FirstIter == *SecondIter )
         {
-            HamingDistance++;
+            ++HamingDistance;
         }
+        ++SecondIter;
     }
-    std::cout << HamingDistance << endl;
+
+    std::cout<< HamingDistance << std::endl;
 
     return a.exec();
 }
