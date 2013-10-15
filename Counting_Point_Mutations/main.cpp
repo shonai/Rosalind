@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     std::string::iterator SecondIter = SecondString.begin();
     for (std::string::iterator FirstIter = FirstString.begin(); FirstIter != FirstString.end(); ++FirstIter)
     {
-        if ( *FirstIter == *SecondIter )
+        if ( *FirstIter != *SecondIter )
         {
             ++HamingDistance;
         }
