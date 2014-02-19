@@ -29,9 +29,9 @@ int main(int argc, char *argv[])
     }
     InputFile.close();
 
-    for(std::vector::iterator<FASTA> iter = vInputs.begin(); iter != vInputs.end(); ++iter)
+    for(std::vector<FASTA>::iterator iter = vInputs.begin(); iter != vInputs.end(); ++iter)
     {
-        for ()
+      std::cout<<iter->ID;
     }
 
     return a.exec();
